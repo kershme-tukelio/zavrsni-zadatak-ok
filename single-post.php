@@ -1,3 +1,19 @@
+<?php
+    $servername = "127.0.0.1";
+    $username = "root";
+    $password = "vivify";
+    $dbname = "blog";
+
+    try {
+        $connection = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+        $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    }
+    catch(PDOException $e)
+    {
+        echo $e->getMessage();
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,17 +30,18 @@
 
     <link href="styles/blog.css" rel="stylesheet">
 </head>
-<body class="va-l-page va-l-page--homepage">
 
-        <?php include('header.php'); ?>
+<body>
+
+    <?php include_once('header.php'); ?>
 
     <main role="main" class="container">
 
-        <?php include('sidebar.php'); ?>
+        <?php include_once('comments.php'); ?>
 
     </main>
 
-        <?php include('footer.php'); ?>
+    <?php include_once('footer.php'); ?>
 
 </body>
 </html>

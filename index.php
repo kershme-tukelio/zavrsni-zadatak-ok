@@ -6,7 +6,6 @@
 
     try {
         $connection = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-        // set the PDO error mode to exception
         $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
     catch(PDOException $e)
@@ -14,7 +13,6 @@
         echo $e->getMessage();
     }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -35,7 +33,7 @@
 
 <body>
 
-    <?php include('header.php'); ?>
+    <?php include_once('header.php'); ?>
 
     <main role="main" class="container">
 
@@ -43,7 +41,7 @@
 
     </main>
 
-    <?php include('footer.php'); ?>
+    <?php include_once('footer.php'); ?>
 
 </body>
 </html>
