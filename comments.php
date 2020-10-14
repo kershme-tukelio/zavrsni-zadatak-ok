@@ -9,11 +9,11 @@
 <?php
     foreach ($posts as $post) {
 ?>
-    <article class="va-c-article">
+    <article>
         <header>
-            <h1><a href="single-post.php?id=<?php echo($post['id']); ?>"><?php echo($post['title']); ?></a></h1>
+            <h1><a class="blog-title blog-post-title" href="single-post.php?id=<?php echo($post['id']); ?>"><?php echo($post['title']); ?></a></h1>
 
-                <div class="va-c-article__meta"> <?php echo($post['created_at']); ?> by <?php echo($post['author']); ?></div>
+                <div> <?php echo($post['created_at']); ?> by <?php echo($post['author']); ?></div>
         </header>
 
             <div>

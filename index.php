@@ -37,10 +37,13 @@
     <?php include_once('header.php'); ?>
 
     <main role="main" class="container">
-
-        <?php include_once('posts.php'); ?>
-        <?php include_once('sidebar.php'); ?>
-
+        <div class="row">
+            <div class="col-sm-8 blog-main">
+                <?php include_once('posts.php'); ?>
+            </div>
+            
+            <?php include_once('sidebar.php'); ?>
+        </div>
     </main>
 
     <?php include_once('footer.php'); ?>

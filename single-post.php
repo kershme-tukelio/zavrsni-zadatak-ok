@@ -37,24 +37,24 @@
     <?php include_once('header.php'); ?>
 
     <main role="main" class="container">
+        <div class="row">
+            <div class="col-sm-8 blog-main">
+                <?php include_once('comments.php'); ?>
+            
+                <form onsubmit="return false;">
+                    <span>Autor komentara:<br/></span>
+                    <input id="author" type="text"><br/>
+                    <span>Komentar:<br/></span>
+                    <input id="comment" type="text"><br/>
+                    <button id="submit-comment">Submit</button>
+                </form>
+            </div>
 
-        <?php include_once('comments.php'); ?>
-
-        <div id="comment-form">
-            <form onsubmit="return false;">
-                <span>Autor komentara:<br/></span>
-                <input id="author" type="text"><br/>
-                <span>Komentar:<br/></span>
-                <input id="comment" type="text"><br/>
-                <button id="submit-comment">Submit</button>
-            </form>
+            <?php include_once('sidebar.php'); ?>
         </div>
-
     </main>
 
     <?php include_once('footer.php'); ?>
-
-    <script src="single-post.js"></script>
 
 </body>
 </html>
