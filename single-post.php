@@ -41,12 +41,25 @@
             <div class="col-sm-8 blog-main">
                 <?php include_once('comments.php'); ?>
             
-                <form onsubmit="return false;">
+                <form method="post">
+                    <?php
+                        if (isset($_POST['submit-button'])) {
+                            try {
+                                $sql3 = "INSERT INTO comments (author, text, post_id) VALUES ('{$_POST['author']}', '{$_POST['text']}', '{$_GET['id']}')";
+                                $stmt = $connection->prepare($sql3);
+                                $stmt->execute();
+                            }
+                            catch (PDOException $e)
+                            {
+                                echo $e->getMessage();
+                            }
+                        }
+                    ?>
                     <span>Autor komentara:<br/></span>
-                    <input id="author" type="text"><br/>
+                    <input id="author" type="text" name="author"><br/>
                     <span>Komentar:<br/></span>
-                    <input id="comment" type="text"><br/>
-                    <button id="submit-comment">Submit</button>
+                    <input id="comment" type="text" name="text"><br/>
+                    <button id="submit-comment" name="submit-button">Submit</button>
                 </form>
             </div>
 
